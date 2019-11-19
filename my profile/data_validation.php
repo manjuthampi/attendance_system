@@ -25,56 +25,53 @@ $(document).ready(function() {jQuery.validator.addMethod("lettersonly", function
 				},
 				rules: 
 				{
-					student_name: 
+					first_name: 
 					{
 						required: true,
 						lettersonly: true			
 					},// simple rule, converted to {required:true}
-					student_dob: 
-					{
-						required: true
-								
-					},
-					student_address: 
+					last_name: 
 					{
 						required: true,
-						lettersonly: true
+						lettersonly: true			
 					},
-					student_username:
+					house: 
 					{
 						required: true
-						
-						
 					},
-					user_password:
+					street:
 					{
 						required: true
-									
 					},
-					student_email:
+					city:
 					{
 						required: true,
-						email:true		
+						lettersonly: true			
 					},
-					student_mob:
+					state:
+					{
+						required: true,
+						lettersonly: true			
+					},
+					designation:
 					{
 						required: true
 					},
-					batch:
+					status:
 					{
 						required: true
 					},
-					brach_name: 
+					phone_number: 
 					{
-						required: true
+						required: true,
 						
-						
+						phoneUS:true 
 							
 					},
-					studet_geder: 
+					email: 
 					{
-						required: true
-					    
+						required: true,
+					    email: true	
 					},
 					username: 
 					{
@@ -83,7 +80,7 @@ $(document).ready(function() {jQuery.validator.addMethod("lettersonly", function
 					password: 
 					{
 						required: true,
-						
+						rangelength: [6,20]
 						
 					},
 					password2: 

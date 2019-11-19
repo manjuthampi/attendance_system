@@ -76,35 +76,7 @@ echo "<select name='$name' class='form-control'>";
   }
   elseif($name=="teacher_name" )
   {
-	  echo "
 	  
-	  
-	  <div class='col-md-6'>
-                       <div class='form-group'><label>
-	  
-	  ".str_replace('_', ' ', $name)."</label>";
-	  
-	  
-	  $sql2 = "select *  from  tbl_teacher ";
-    $result2 = mysqli_query($con, $sql2) or die("Error in Selecting " . mysqli_error($connection));
-echo "<select name='$name' class='form-control'>";
-
- $sql5 = "select *  from  tbl_teacher WHERE id='$row2[teacher_name]'";
- $result5 = mysqli_query($con, $sql5) or die("Error in Selecting " . mysqli_error($connection));
- $row5=mysqli_fetch_array($result5);
- echo "<option value='$row5[id]'>$row5[teacher_name]</option>";
-    
-    while($row2 =mysqli_fetch_array($result2))
-    {
-		
-		echo "<option value='$row2[id]'>$row2[teacher_name]</option>";
-	}
-	  echo "</select>";
-	    
-	  echo "</div>
-                                        </div>";
-	
-      
     
   }
   
@@ -141,7 +113,7 @@ echo "<select name='$name' class='form-control'>";
 	  echo "
 	  
 	  
-	  <div class='col-md-6'>
+	  <div class='col-md-12'>
                        <div class='form-group'><label>
 	  
 	  ".str_replace('_', ' ', $name)."</label>";
@@ -149,28 +121,32 @@ echo "<select name='$name' class='form-control'>";
 	  
 	  $sql2 = "select *  from  tbl_student ";
     $result2 = mysqli_query($con, $sql2) or die("Error in Selecting " . mysqli_error($connection));
-echo "<select name='$name' class='form-control'>";
+echo "<select name='$name' class='form-control' disabled>";
 
- $sql5 = "select *  from  tbl_teacher WHERE id='$row2[student_name]'";
+ $sql5 = "select *  from  tbl_student WHERE id='$row2[student_name]'";
  $result5 = mysqli_query($con, $sql5) or die("Error in Selecting " . mysqli_error($connection));
  $row5=mysqli_fetch_array($result5);
  echo "<option value='$row5[id]'>$row5[student_name]</option>";
     
-    while($row2 =mysqli_fetch_array($result2))
-    {
-		
-		echo "<option value='$row2[id]'>$row2[student_name]</option>";
-	}
 	  echo "</select>";
 	    
 	  echo "</div>
                                         </div>";
-	
-      
-    
+
   }
   
-   
+   elseif($name=="question")
+  {
+	  echo "<div class='col-md-12'>
+                                            <div class='form-group'><label>
+											
+											 ".str_replace('_', ' ', $name)."</label>
+											
+											<input type='text' name='$name' value='$datas ?' class='form-control' readonly >
+											</div>
+											</div>";
+  }
+  
 
 
 
@@ -206,10 +182,6 @@ echo "<select name='$name' class='form-control'>";
 	
 	
 	
-	
-	
-	
-	
 	  echo "</select>";
 	    
 	  echo "</div>
@@ -220,6 +192,28 @@ echo "<select name='$name' class='form-control'>";
   }
   
 
+elseif($i==8)
+{
+	$dateT=date("Y-m-d");
+	echo "<input type='hidden' name='$name' value='$dateT' class='form-control' >";
+}
+elseif($i==5)
+{
+	echo "<input type='hidden' name='$name' value='$datas' class='form-control' >";
+}
+elseif($i==7)
+{
+	  echo "<div class='col-md-12'>
+                                            <div class='form-group'><label>
+											
+											 ".str_replace('_', ' ', $name)."</label>
+											
+											<input type='text' name='$name' value='$datas' class='form-control' readonly >
+											</div>
+											</div>";
+	
+	
+}
 
 
 
@@ -230,16 +224,17 @@ echo "<select name='$name' class='form-control'>";
 
 
 
-
-
-  elseif($type_only=="varchar" || $type_only=="int" || $type_only=="int" || $type_only=="tinyint"  )
+  else
+  {
+  
+  if($type_only=="varchar" || $type_only=="int" || $type_only=="int" || $type_only=="tinyint"  )
   {
 	  
 	  
 	  echo "
 	  
 	  
-	  <div class='col-md-10'>
+	  <div class='col-md-6'>
                                             <div class='form-group'><label>
 	  
 	  ".str_replace('_', ' ', $name)."</label><input type='text' name='$name' value='$datas' class='form-control' > </div>
@@ -252,7 +247,7 @@ echo "<select name='$name' class='form-control'>";
   
     elseif($type_only=="date" )
   {
-	  echo "<div class='col-sm-2'>".str_replace('_', ' ', $name)."</div><div class='col-sm-4'> <input type='text' name='$name' id='t$k' value='$datas' class='form-control'></div>";
+	  echo "<div class='col-sm-6'>".str_replace('_', ' ', $name)."</div><div class='col-sm-4'> <input type='text' name='$name' id='t$k' value='$datas' class='form-control'></div>";
 	  
 	  ?>
 	  
@@ -273,7 +268,7 @@ function showDate(date) {
   
   
   
- if($type_only=="tinytext" )
+ elseif($type_only=="tinytext" )
   {
 	  echo "
 	  
@@ -288,22 +283,21 @@ function showDate(date) {
 	  
 	  </div></div>";
   }
-  if($type_only=="text" )
+
+  elseif($type_only=="text" )
   {
-	  echo "<div class='col-md-10'>
+	  echo "<div class='col-md-12'>
                                             <div class='form-group'><label>
 											
-											 ".str_replace('_', ' ', $name)."</label>
+											 ".str_replace('_',' ',$name)."</label>
 											
-											<textarea name='$name' class='form-control'>$datas</textarea>
+											<textarea name='$name' class='form-control' rows='8'>$datas</textarea>
 											</div>
 											</div>";
   }
   
-  
-  
 
-  
+  }
   
 }
 

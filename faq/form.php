@@ -72,7 +72,9 @@ $g++;
 }
 
 
-
+if($i==1  ||$name=="teacher_name")
+{
+}
 
 
   if($name=="student_gender"  )

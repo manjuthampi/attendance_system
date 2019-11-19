@@ -31,7 +31,7 @@ display:inline-block;
 <div class="">
 <?php
 
-	echo "<div class='col-sm-2' style='float:right;margin-bottom:10px;'><form action='form.php' method='post'><input type='submit' name='view' value='Add New' class='form-control btn-danger'></form></div>";
+	//echo "<div class='col-sm-2' style='float:right;margin-bottom:10px;'><form action='form.php' method='post'><input type='submit' name='view' value='Add New' class='form-control btn-danger'></form></div>";
 	
 ?>
 <div class="clearfix"></div>
@@ -104,24 +104,27 @@ while ($row2 = mysqli_fetch_array($result2))
 
   $name=$row2['Field'];
 
+if($name=="teacher_name")
+{
+}
+else
+{
+
   echo "<th>".
   str_replace('_', ' ', $name)
   ."</th>";
+  }
  $i++;
  }
  echo "
-<th>Update</th>
- 
- <th>Del</th> 
+
  </tr></thead>";
    
   // $i=0;
    echo "<tbody>";
-   
-            
-            
+        
          
- 	$result = mysqli_query($con,"SELECT * FROM $table ");
+ 	$result = mysqli_query($con,"SELECT * FROM $table WHERE teacher_name='$_SESSION[teacher_id]' ");
 	
 
 		while($row = mysqli_fetch_array($result))
@@ -132,18 +135,45 @@ while ($row2 = mysqli_fetch_array($result2))
 		{
 	
 			
-			if($k==30)
+			if($k==1)
 			{
-			  $sql2 = "select *  from customer where id='$_SESSION[userid]' ";
+			  $sql2 = "select *  from tbl_student where id='$row[student_name]' ";
     $result2 = mysqli_query($con, $sql2) or die("Error in Selecting " . mysqli_error($connection));
 $row2 =mysqli_fetch_array($result2);
 		
 		
 
-			echo "<td >  $row2[contact_person]</td>";
+			echo "<td >  $row2[student_name]</td>";
 				
 			}
+			elseif($k==2)
+			{
+				
+			}
+			elseif($k==4)
+			{
+			$status=$row['status'];	
+            if($status=="applied")
+			{
+			echo "<td ><form action='up.php?id=$row[id]' method='post' >
+				
+				<select name='status'>
+				<option value='approved'>Approve</option>
+				<option value='rejected'>Reject</option>
+				</select>
+				<input type='submit' name='update' value='Update'>
+				
+				</form></td>";
+				
+			}
+			else
+			{
+				echo "<td >$row[$k]</td>";
+				
+			}
+}
 			
+
 				
 			elseif($k==31)
 			{
@@ -179,10 +209,7 @@ $row2 =mysqli_fetch_array($result2);
 		
 			echo "
 			
-			<td><a href='update.php?id=$id'>Update</a></td>
-			
-			<td><a href='?del_id=$id' onclick='return rem()'>Del</a></td>
-		
+	
 			</tr>";
 		
 		

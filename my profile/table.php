@@ -1,5 +1,5 @@
 <?php
-$table="tbl_student";
+$table="tbl_teacher";
 $target_path = "uploads/";
-$title=" STUDENT";
+$title=" TEACHER";
 ?>

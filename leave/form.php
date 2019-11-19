@@ -64,7 +64,7 @@ $i++;
 
 $g++;
 //echo " <div ><div >";
-//if($i==1  ||$name=="")
+if($i==1  ||$teacher_name=="")
 {
 	//$gender=enum("male");
 	

@@ -11,37 +11,37 @@ jQuery.validator.addMethod("notEqual", function(value, element, param) {return t
 				},
 				rules: 
 				{
-					total_balance: 
+					teacher_name: 
 					{
 						required: true,
-						number: true			
+						lettersonly: true			
 					},// simple rule, converted to {required:true}
-					user: 
+					dob: 
 					{
 						required: true
 					},
-					company_balance: 
+					address: 
 					{
 						required: true,
-					    number: true	
+					    lettersonly: true	
 					},
-					amount: 
+					gender: 
 					{
-						required: true,
-					    number: true	
+						required: true
+					    
 					},
-					remark: 
+					username: 
 					{
 						required: true	
 					},
-					comment: 
+					password: 
 					{
 						required: true
 					}
 					},
-					messages: 
+					qualification: 
 					{
-						comment: "Please enter a comment."
+						required: true
 					}
 			});	
 		});	

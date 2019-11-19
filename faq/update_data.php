@@ -81,7 +81,7 @@ $target_path2=$row2[$field_name[$k]];
 }
 //echo $datas."<br>";
 
-mysqli_query($con,"UPDATE $table SET $datas  WHERE id='$id'") or die("error".mysql_error());
+mysqli_query($con,"UPDATE $table SET answer='$_POST[answer]',status='answered',answer_date='$_POST[answer_date]' WHERE id='$id'") or die("error".mysql_error());
 
 
 
@@ -113,5 +113,5 @@ mysql_free_result($result);
 mysql_close();
 
 
-header("location:update.php?id=$id");
+header("location:select.php?id=$id");
 ?>

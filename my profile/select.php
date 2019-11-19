@@ -31,7 +31,7 @@ display:inline-block;
 <div class="">
 <?php
 
-	echo "<div class='col-sm-2' style='float:right;margin-bottom:10px;'><form action='form.php' method='post'></form></div>";
+	echo "<div class='col-sm-2' style='float:right;margin-bottom:10px;'><form action='form.php' method='post'><input type='submit' name='view' value='Add New' class='form-control btn-danger'></form></div>";
 	
 ?>
 <div class="clearfix"></div>
@@ -134,7 +134,7 @@ while ($row2 = mysqli_fetch_array($result2))
 			
 			if($k==30)
 			{
-			   $sql2 = "select *  from student where id='$_SESSION[userid]' "; 
+			   $sql2 = "select *  from teacher where id='$_SESSION[userid]' "; 
     $result2 = mysqli_query($con, $sql2) or die("Error in Selecting " . mysqli_error($connection));
 $row2 =mysqli_fetch_array($result2);
 		

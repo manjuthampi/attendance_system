@@ -3,7 +3,6 @@
 include("../header_inner.php");
 include("table.php");
 error_reporting(0);
-
 if($_REQUEST['a']=="error")
 {
 	echo "<script>alert('Insert Faild!!!!')</script>";
@@ -14,8 +13,7 @@ if($_REQUEST['a']=="1")
 }
 
 $k=0;
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 <head>
  
@@ -64,19 +62,19 @@ while ($row = mysqli_fetch_array($result))
 $i++;
 
 $g++;
+
+
 //echo " <div ><div >";
-if($i==1  ||$name=="current_sem")
+
+
+
+if($i==1 )
 {
-	//$gender=enum("male");
 	
-//echo"<td>Male <input type='radio' name='$name'> </td>";
+	//echo "<td>Male <input type='radio' name='$name'> </td>";
+	
 }
-
-
-
-
-
-  elseif($name=="student_gender"  )
+ elseif($name=="t_gender"  )
   {
 	  echo "
 	  
@@ -95,7 +93,7 @@ if($i==1  ||$name=="current_sem")
     
   }
 
- elseif($i==70)
+elseif($i==70)
 {
 	$dateT=date("Y-m-d H:i:s");
 	echo "<input type='hidden' name='$name' value='$_SESSION[userid]' class='form-control' >";
@@ -106,7 +104,7 @@ elseif($i==60)
 	echo "<input type='hidden' name='$name' value='$dateT' class='form-control' >";
 }
 
- elseif($name=="batch" )
+ elseif($i==30 )
   {
 	  echo "
 	  
@@ -117,14 +115,14 @@ elseif($i==60)
 	  ".str_replace('_', ' ', $name)."</label>";
 	  
 	  
-	  $sql2 = "select *  from  tbl_batch ";
+	  $sql2 = "select *  from division ";
     $result2 = mysqli_query($con, $sql2) or die("Error in Selecting " . mysqli_error($connection));
 echo "<select name='$name' class='form-control'>";
     
     while($row2 =mysqli_fetch_array($result2))
     {
 		
-		echo "<option value='$row2[id]'>$row2[batch]</option>";
+		echo "<option value='$row2[id]'>$row2[division]</option>";
 	}
 	  echo "</select>";
 	    
