@@ -3,7 +3,7 @@ session_start();
 
 if($_SESSION['type']=="")
 {
-header("location:../../admin/login/login.php");
+	header("location:../../admin/login/login.php");
 }
 
 $title="";
@@ -66,22 +66,30 @@ $title="";
 
             <ul class="nav">
                 
-                
-          <li>
+                 <li>
                     <a href="../dashboard/dashboard.php">
                         <i class="pe-7s-home"></i>
                         <p>Home </p>
                     </a>
                 </li>
                 
-             
-                 <li>
-                    <a href="../apply leave/select.php">
-                        <i class="pe-7s-way"></i>
-                        <p>Apply Leave </p>
+                <!-- <li>
+                    <a href="../station/select.php">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Station </p>
                     </a>
                 </li>
-         
+                
+             
+                 <li>
+                    <a href="../offer/select.php">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Offer </p>
+                    </a>
+                </li>
+                
+                -->
+                
                 
                  
                
