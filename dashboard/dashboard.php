@@ -6,7 +6,7 @@ if ($status == "logout")
     session_start();
     session_unset();
     session_destroy();
-	header("location:../login/login.php");
+	header("location:../../admin/login/login.php");
 }
 ?>
 <?php
@@ -85,57 +85,31 @@ background:#666;
                             <div class="content all-icons">
                                 <div class="row">
                                                             
-                                  <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                <a href="../student/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
-                                      <input type="text" value="STUDENT">
-                                    </div></a>
-                                  </div>
-                                  
-                                  <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                <a href="../teacher/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
-                                      <input type="text" value="TEACHER">
-                                    </div></a>
-                                  </div>
-                                  
-                                
-                                                            
-                                  <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                <a href="../subject/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
-                                      <input type="text" value="SUBJECT">
+                                 <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                <a href="../my profile/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
+                                      <input type="text" value="MY PROFILE">
                                     </div></a></div>
-                                 
-                                   <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                <a href="../leave/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
-                                      <input type="text" value="LEAVE">
-                                    </div></a>
-                                  </div>
-                                 
-                                   <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                <a href="../batch/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
-                                      <input type="text" value="BATCH">
-                                    </div></a>
-                                  </div>
-                                        <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                <a href="../leave/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
-                                      <input type="text" value="DISCUSSION FORUM">
-                                    </div></a>
-                                  </div>
+                                  
                                   <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                <a href="../fingerprint/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
-                                      <input type="text" value="FINGERPRINT">
+                                <a href="../apply leave/select.php">    <div class="font-icon-detail"><i class="pe-7s-photo-gallery"></i>
+                                      <input type="text" value="APPLY LEAVE">
+                                    </div></a>
+                                  </div>
+    
+                                        <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                <a href="../discussion forum/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
+                                      <input type="text" value="DISCUSSION FORUM"></div></a>
+                                  </div>
+                                  
+                                   <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                <a href="../event/index.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
+                                      <input type="text" value="EVENTS/CALENDAR">
                                     </div></a>
                                 </div>
-                                <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                <a href="../event/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
-                                      <input type="text" value="EVENTS">
-                                    </div></a>
+                                
                                 </div>
 
-<div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                <a href="../report/report.php"><div class="font-icon-detail"><i class="pe-7s-users"></i>
-                                      <input type="text" value="ATTENDANCE REPORT">
-                                 </div></a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
