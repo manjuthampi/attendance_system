@@ -175,10 +175,11 @@ $row2 =mysqli_fetch_array($result2);
 		
 		
 		
-		//<a href='fingure.php?id=$id'>Fingure</a><br>
+		
 		
 			echo "
-			<td><a href='update.php?id=$id'>Data</a></td>
+			
+			<td><a href='update.php?id=$id'>Update</a></td>
 			
 			<td><a href='?del_id=$id' onclick='return rem()'>Del</a></td>
 		

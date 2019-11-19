@@ -74,7 +74,7 @@ if($i==1 )
 	//echo "<td>Male <input type='radio' name='$name'> </td>";
 	
 }
- elseif($name=="gender"  )
+ elseif($name=="t_gender"  )
   {
 	  echo "
 	  
