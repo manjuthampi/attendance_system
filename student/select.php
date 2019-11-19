@@ -31,8 +31,8 @@ display:inline-block;
 <div class="">
 <?php
 
-	echo "<div class='col-sm-2' style='float:right;margin-bottom:10px;'><form action='form.php' method='post'>
-	<input type='submit' name='view' value='Add New' class='form-control btn-danger'></form></div>";
+	echo "<div class='col-sm-2' style='float:right;margin-bottom:10px;'><form action='form.php' method='post'><input type='submit' name='view' value='Add New' class='form-control btn-danger'></form></div>";
+	
 ?>
 <div class="clearfix"></div>
 <table id="example" class="table table-striped table-bordered dataTable no-footer" cellspacing="0"  role="grid" aria-describedby="example_info" >

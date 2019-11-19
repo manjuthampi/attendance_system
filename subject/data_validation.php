@@ -37,8 +37,8 @@ $(document).ready(function() {jQuery.validator.addMethod("lettersonly", function
 					},
 					teacher_name : 
 					{
-						required: true
-						
+						required: true,
+						lettersonly:true
 					},
 					current_sem:
 					{

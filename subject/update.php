@@ -108,7 +108,37 @@ echo "<select name='$name' class='form-control'>";
     
   }
   
+   elseif($name=="current_sem" )
+  {
+	  echo "
+	  
+	  
+	  <div class='col-md-6'>
+                       <div class='form-group'><label>
+	  
+	  ".str_replace('_', ' ', $name)."</label>";
+	  
+	  
+	  $sql2 = "select *  from  tbl_student ";
+    $result2 = mysqli_query($con, $sql2) or die("Error in Selecting " . mysqli_error($connection));
+echo "<select name='$name' class='form-control'>";
+    
+    while($row2 =mysqli_fetch_array($result2))
+    {
+		
+		echo "<option value='$row2[id]'>$row2[current_sem]</option>";
+	}
+	  echo "</select>";
+	    
+	  echo "</div>
+                                        </div>";
+	
+      
+    
+  }
    
+
+
 
  elseif($i==30 )
   {
