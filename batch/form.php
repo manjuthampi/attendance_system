@@ -3,7 +3,6 @@
 include("../header_inner.php");
 include("table.php");
 error_reporting(0);
-
 if($_REQUEST['a']=="error")
 {
 	echo "<script>alert('Insert Faild!!!!')</script>";
@@ -65,11 +64,12 @@ $i++;
 
 $g++;
 //echo " <div ><div >";
-if($i==1  ||$name=="current_sem")
+if($i==1 || $id="")
 {
 	//$gender=enum("male");
 	
 //echo"<td>Male <input type='radio' name='$name'> </td>";
+echo "<input type='hidden' name='$name'  class='form-control' >";
 }
 
 
@@ -106,7 +106,34 @@ elseif($i==60)
 	echo "<input type='hidden' name='$name' value='$dateT' class='form-control' >";
 }
 
- 
+ elseif($name=="batch" )
+  {
+	  echo "
+	  
+	  
+	  <div class='col-md-6'>
+                       <div class='form-group'><label>
+	  
+	  ".str_replace('_', ' ', $name)."</label>";
+	  
+	  
+	  $sql2 = "select *  from  tbl_batch ";
+    $result2 = mysqli_query($con, $sql2) or die("Error in Selecting " . mysqli_error($connection));
+echo "<select name='$name' class='form-control'>";
+    
+    while($row2 =mysqli_fetch_array($result2))
+    {
+		
+		echo "<option value='$row2[id]'>$row2[batch]</option>";
+	}
+	  echo "</select>";
+	    
+	  echo "</div>
+                                        </div>";
+	
+      
+    
+  }
    
  elseif($i==40 )
   {
@@ -149,7 +176,7 @@ function showDate(date) {
     
   }
 
-else
+//else
 {
 
   if($type_only=="varchar" || $type_only=="int" || $type_only=="int" || $type_only=="tinyint" )
