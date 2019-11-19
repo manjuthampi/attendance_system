@@ -76,7 +76,7 @@ echo "<form method='post' name='register_form' id='register_form'>";
 	  <option value=''>--select subject--</option>
 <?php
 
-$data=mysqli_query($con,"SELECT * FROM tbl_subject");
+$data=mysqli_query($con,"SELECT * FROM tbl_subject WHERE teacher_name='$_SESSION[teacher_id]'");
 while($row=mysqli_fetch_array($data))
 {
 	echo " <option value='$row[id]'>$row[subject_name]</option>"; 
