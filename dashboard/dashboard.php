@@ -6,9 +6,35 @@ if ($status == "logout")
     session_start();
     session_unset();
     session_destroy();
+	unset($_COOKIE['batch']);
+	unset($_COOKIE['subject_id']);
+	unset($_COOKIE['batch_id']);
+	unset($_COOKIE['period']);
 	header("location:../../admin/login/login.php");
 }
+if($_REQUEST['a']=="already")
+{
+	echo "<script>
+	alert('Already Notified');
+	window.location.href = 'dashboard.php';
+	</script>";
+}
+if($_REQUEST['a']=="notified")
+{
+	echo "<script>
+	alert('Successfully Notified');
+	window.location.href = 'dashboard.php';
+	</script>";
+}
+if($_REQUEST['a']=="time")
+{
+	echo "<script>
+	alert('Time is not yet 4 PM');
+	window.location.href = 'dashboard.php';
+	</script>";
+}
 ?>
+
 <?php
 include("../common/menu.php");
 	
@@ -85,27 +111,67 @@ background:#666;
                             <div class="content all-icons">
                                 <div class="row">
                                                             
-                                 <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                  <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                <a href="../student/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
+                                      <input type="text" value="STUDENT">
+                                    </div></a>
+                                  </div>
+                                  
+                                 <!-- <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
                                 <a href="../my profile/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
-                                      <input type="text" value="MY PROFILE">
+                                      <input type="text" value="My Profile">
+                                    </div></a>
+                                  </div>-->
+                                  
+                                
+                                                            
+                                  <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                <a href="../subject/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
+                                      <input type="text" value="SUBJECT">
                                     </div></a></div>
+                                 
+                                   <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                <a href="../leave/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
+                                      <input type="text" value="LEAVE SANCTION">
+                                    </div></a>
+                                  </div>
+                                 
+                                   <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                <a href="../batch/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
+                                      <input type="text" value="BATCH">
+                                    </div></a>
+                                  </div>
+                                        <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                <a href="../faq/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
+                                      <input type="text" value="DISCUSSION FORUM">
+                                    </div></a>
+                                  </div>
                                   
                                   <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                <a href="../apply leave/select.php">    <div class="font-icon-detail"><i class="pe-7s-photo-gallery"></i>
-                                      <input type="text" value="APPLY LEAVE">
-                                    </div></a>
-                                  </div>
-    
-                                        <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                <a href="../discussion forum/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
-                                      <input type="text" value="DISCUSSION FORUM"></div></a>
-                                  </div>
-                                  
-                                   <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                <a href="../event/index.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
-                                      <input type="text" value="EVENTS/CALENDAR">
+                                <a href="../event/select.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
+                                      <input type="text" value="EVENTS">
                                     </div></a>
                                 </div>
+                                  
+                                   <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                <a href="../attendance/form.php">    <div class="font-icon-detail"><i class="pe-7s-users"></i>
+                                      <input type="text" value="MARK ATTENDANCE">
+                                    </div></a>
+                                </div>
+                                
+                                <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                <a href="../report/report.php"><div class="font-icon-detail"><i class="pe-7s-users"></i>
+                                      <input type="text" value="ATTENDANCE REPORT">
+                                 </div></a>
+                                </div>
+                                
+                                 <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                <a href="../notification/notify.php"><div class="font-icon-detail"><i class="pe-7s-users"></i>
+                                      <input type="text" value="NOTIFY PARENTS">
+                                 </div></a>
+                                </div>
+                                  
+                                  
                                 
                                 </div>
 
