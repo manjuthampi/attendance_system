@@ -1,2 +1,2 @@
-# attendance_system
+# manjuthampi
 student attendance system using fingerprint
